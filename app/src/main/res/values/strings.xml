@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Morbidelli_Design</string>
+    
+    <string name="my_bookings">My Bookings</string>
+    <string name="tab_all">All</string>
+    <string name="tab_upcoming">Upcoming</string>
+    <string name="tab_completed">Completed</string>
+    <string name="tab_cancelled">Cancelled</string>
+    <string name="reschedule">Reschedule</string>
+    <string name="cancel_booking">Cancel booking</string>
+    <string name="naked">Naked</string>
+    <string name="oakley_motorcycles">Oakley Motorcycles</string>
+    <string name="via_fabio_severo">Via Fabio Severo 34, Trieste, Trieste 34127</string>
+    <string name="time_format">%s - %s</string>
+    <string name="vehicle_code_format">#%s</string>
+    <string name="menu_options">Menu options</string>
+    
+    <string name="morbidelli">MORBIDELLI</string>
+    <string name="my_bookings_card">My Bookings</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="completed">Completed</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="book_new_test_ride">BOOK A NEW TEST RIDE</string>
+    
+    <string name="no_bookings_title">You have no bookings yet</string>
+    <string name="no_bookings_description">Please, click the Book a new test ride button\nto start test rides.</string>
+    
+    <string name="nearby_ride_options">Nearby Ride Options</string>
+    <string name="nearby_dealers_subtitle">Nearby dealers available for test ride</string>
+    <string name="n300_model">N300</string>
+    <string name="n250r_model">N250R</string>
+    <string name="power_specs">Power: %s HP</string>
+    <string name="weight_specs">Curb Weight: %s KG</string>
+    <string name="n300_power">295/10000</string>
+    <string name="n300_weight">161</string>
+    <string name="n250r_power">25.75/9250</string>
+    <string name="n250r_weight">151</string>
+</resources>

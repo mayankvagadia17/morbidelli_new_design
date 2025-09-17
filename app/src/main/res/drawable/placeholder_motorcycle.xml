@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Motorcycle body -->
+    <item
+        android:left="10dp"
+        android:top="25dp"
+        android:right="10dp"
+        android:bottom="45dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/primary_cyan" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+    
+    <!-- Left wheel -->
+    <item
+        android:left="15dp"
+        android:top="70dp"
+        android:right="125dp"
+        android:bottom="55dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/text_dark" />
+        </shape>
+    </item>
+    
+    <!-- Right wheel -->
+    <item
+        android:left="105dp"
+        android:top="70dp"
+        android:right="35dp"
+        android:bottom="55dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/text_dark" />
+        </shape>
+    </item>
+    
+</layer-list>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.morbidelli.morbidelli_design">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Morbidelli_Design">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Morbidelli_Design">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MyBookingActivity"
+            android:exported="false"
+            android:label="@string/my_bookings"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".TestRideActivity"
+            android:exported="false"
+            android:label="Test Ride"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".ModelSliderActivity"
+            android:exported="false"
+            android:label="Model Gallery"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".ModelDetailsActivity"
+            android:exported="false"
+            android:label="Model Details"
+            android:theme="@style/Theme.Morbidelli_Design" />
+    </application>
+
+</manifest>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/modal_background"
+    android:orientation="vertical">
+
+    <!-- Toolbar for proper navigation -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/modal_background"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="2dp" />
+        
+    <!-- Fallback header with close button (kept for compatibility) -->
+    <RelativeLayout
+        android:id="@+id/fallback_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_close"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Model details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/model_title"
+            android:fontFamily="sans-serif-medium" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Vehicle Image -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/iv_vehicle_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/n300_green"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+
+            <!-- Vehicle Title -->
+            <TextView
+                android:id="@+id/tv_vehicle_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N300"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/model_title"
+                android:fontFamily="sans-serif"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Vehicle Subtitle -->
+            <TextView
+                android:id="@+id/tv_vehicle_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Morbidelli N300: Ride Art, Master Roads"
+                android:textSize="14sp"
+                android:textColor="@color/model_subtitle"
+                android:fontFamily="sans-serif"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Vehicle Description -->
+            <TextView
+                android:id="@+id/tv_vehicle_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Morbidelli N300 is more than a motorcycle; it's a statement of style and performance."
+                android:textSize="14sp"
+                android:textColor="@color/model_description"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Specifications Table -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="40dp">
+
+                <!-- Price Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Price from"
+                            android:textSize="12sp"
+                            android:textColor="@color/spec_label"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:id="@+id/tv_price_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="N/A"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/spec_value"
+                            android:fontFamily="sans-serif" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Power (hp)"
+                            android:textSize="12sp"
+                            android:textColor="@color/spec_label"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:id="@+id/tv_power_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="29.5/10000"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/spec_value"
+                            android:fontFamily="sans-serif" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Weight and Torque Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Curb Weight (kg)"
+                            android:textSize="12sp"
+                            android:textColor="@color/spec_label"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:id="@+id/tv_curb_weight_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="151"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/spec_value"
+                            android:fontFamily="sans-serif" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Max. Torque"
+                            android:textSize="12sp"
+                            android:textColor="@color/spec_label"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginBottom="4dp" />
+
+                        <TextView
+                            android:id="@+id/tv_max_torque_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="26.4N·m/6000 r/min"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/spec_value"
+                            android:fontFamily="sans-serif" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Select Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_select_model"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SELECT THIS MODEL"
+            android:textColor="@color/select_button_text"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_cyan_rounded"
+            android:elevation="2dp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+</LinearLayout>
