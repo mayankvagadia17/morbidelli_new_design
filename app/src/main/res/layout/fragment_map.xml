@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Google Maps -->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Map controls -->
+    <LinearLayout
+        android:id="@+id/map_controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical">
+
+        <!-- Fullscreen button -->
+        <ImageButton
+            android:id="@+id/btn_fullscreen"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/map_control_background"
+            android:src="@drawable/ic_fullscreen"
+            android:contentDescription="Fullscreen"
+            android:layout_marginBottom="2dp" />
+
+        <!-- Zoom In -->
+        <ImageButton
+            android:id="@+id/btn_zoom_in"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/map_control_background"
+            android:src="@drawable/ic_add"
+            android:contentDescription="Zoom In"
+            android:layout_marginBottom="2dp" />
+
+        <!-- Zoom Out -->
+        <ImageButton
+            android:id="@+id/btn_zoom_out"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/map_control_background"
+            android:src="@drawable/ic_remove"
+            android:contentDescription="Zoom Out"
+            android:layout_marginBottom="16dp" />
+
+        <!-- My Location -->
+        <ImageButton
+            android:id="@+id/btn_my_location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/map_control_background"
+            android:src="@drawable/ic_my_location"
+            android:contentDescription="My Location" />
+
+    </LinearLayout>
+
+    <!-- Search button -->
+    <ImageButton
+        android:id="@+id/btn_search"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/search_button_background"
+        android:src="@drawable/ic_search"
+        android:contentDescription="Search" />
+
+</FrameLayout>

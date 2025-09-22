@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnBookTestRide.setOnClickListener {
-            toggleEmptyState()
+            startActivity(Intent(this, BookTestRideActivity::class.java))
         }
     }
 
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onRideSelected(ride: RideModel) {
         startActivity(
-            Intent(this, TestRideActivity::class.java)
+            Intent(this, BookTestRideActivity::class.java)
         )
     }
 

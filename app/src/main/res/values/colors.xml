@@ -69,4 +69,19 @@
     
     <!-- Vehicle Card Colors -->
     <color name="card_border">#E0E0E0</color>
+    
+    <!-- Button Colors -->
+    <color name="button_gray">#E0E0E0</color>
+    
+    <!-- Search Dialog Colors -->
+    <color name="search_hint_text">#999999</color>
+    <color name="filter_unselected_text">#999999</color>
+    
+    <!-- List View Colors -->
+    <color name="address_text">#666666</color>
+    <color name="available_text">#666666</color>
+    <color name="from_label_text">#666666</color>
+    <color name="show_more_text">#666666</color>
+    <color name="radio_button_color">#CCCCCC</color>
+    <color name="divider_color">#E5E5E5</color>
 </resources>
