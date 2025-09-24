@@ -15,6 +15,8 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
@@ -23,6 +25,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.morbidelli.morbidelli_design.R
+import com.morbidelli.morbidelli_design.adapter.LocationAdapter
+import com.morbidelli.morbidelli_design.dialog.DealerDetailsBottomSheet
 import com.morbidelli.morbidelli_design.model.LocationModel
 
 class MapFragment : Fragment(), OnMapReadyCallback {
@@ -34,6 +38,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     private lateinit var btnMyLocation: ImageButton
     private lateinit var btnSearch: ImageButton
     private lateinit var btnFullscreen: ImageButton
+    private lateinit var rvLocationCards: RecyclerView
+    private lateinit var locationAdapter: LocationAdapter
 
     private var onLocationSelected: ((LocationModel) -> Unit)? = null
     private var onSearchClicked: (() -> Unit)? = null
@@ -80,6 +86,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         initViews(view)
         setupMapView(savedInstanceState)
         setupClickListeners()
+        setupRecyclerView()
     }
 
     private fun initViews(view: View) {
@@ -89,6 +96,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         btnMyLocation = view.findViewById(R.id.btn_my_location)
         btnSearch = view.findViewById(R.id.btn_search)
         btnFullscreen = view.findViewById(R.id.btn_fullscreen)
+        rvLocationCards = view.findViewById(R.id.rv_location_cards)
     }
 
     private fun setupMapView(savedInstanceState: Bundle?) {
@@ -119,6 +127,25 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
         btnFullscreen.setOnClickListener {
             onFullscreenClicked?.invoke()
+        }
+    }
+
+    private fun setupRecyclerView() {
+        locationAdapter = LocationAdapter(
+            locations = sampleLocations.toMutableList(),
+            onLocationClick = { location ->
+                // Only update selection, no navigation
+                updateLocationSelection(location)
+            },
+            onViewMoreClick = { location ->
+                // Show bottom sheet with dealer details
+                showDealerDetailsBottomSheet(location)
+            }
+        )
+        
+        rvLocationCards.apply {
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = locationAdapter
         }
     }
 
@@ -253,6 +280,22 @@ class MapFragment : Fragment(), OnMapReadyCallback {
             val position = LatLng(location.latitude, location.longitude)
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 14f))
         }
+    }
+
+    fun updateLocationSelection(selectedLocation: LocationModel) {
+        if (::locationAdapter.isInitialized) {
+            // Update the adapter's selected location
+            locationAdapter.setSelectedLocation(selectedLocation.id)
+        }
+    }
+
+    private fun showDealerDetailsBottomSheet(location: LocationModel) {
+        val bottomSheet = DealerDetailsBottomSheet.newInstance(location)
+        bottomSheet.setOnLocationSelectedListener { selectedLocation ->
+            onLocationSelected?.invoke(selectedLocation)
+            updateLocationSelection(selectedLocation)
+        }
+        bottomSheet.show(parentFragmentManager, "DealerDetailsBottomSheet")
     }
 
     // MapView lifecycle methods

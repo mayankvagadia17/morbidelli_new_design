@@ -61,16 +61,37 @@
 
     </LinearLayout>
 
-    <!-- Search button -->
-    <ImageButton
-        android:id="@+id/btn_search"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="bottom|start"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/search_button_background"
-        android:src="@drawable/ic_search"
-        android:contentDescription="Search" />
+    <!-- Search button - positioned at bottom-left of map, overlapping RecyclerView -->
+
+    <!-- Horizontal RecyclerView for location cards -->
+    <LinearLayout
+        android:id="@+id/location_cards_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/btn_search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/search_button_background"
+            android:src="@drawable/ic_search" />
+
+        <!-- Horizontal RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_location_cards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal" />
+
+    </LinearLayout>
 
 </FrameLayout>

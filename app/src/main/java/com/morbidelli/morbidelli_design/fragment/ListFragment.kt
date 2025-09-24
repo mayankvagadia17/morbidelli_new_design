@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.morbidelli.morbidelli_design.R
 import com.morbidelli.morbidelli_design.adapter.LocationListAdapter
+import com.morbidelli.morbidelli_design.model.ContactInfo
 import com.morbidelli.morbidelli_design.model.LocationModel
+import com.morbidelli.morbidelli_design.model.WorkingHours
 
 class ListFragment : Fragment() {
 
@@ -25,10 +27,19 @@ class ListFragment : Fragment() {
         LocationModel(
             id = 1,
             dealershipName = "Adventure Moto and services Official Dealership",
-            address = "1234 Elm Avenue, Brooklyn, NY 11201, US",
+            address = "Via Fabio Severo 34, Trieste, Trieste 34127",
             fromDate = "18.08.2025",
             latitude = 27.0844,  // Arunachal Pradesh
-            longitude = 93.6053
+            longitude = 93.6053,
+            availableMotorbikes = 1,
+            workingHours = WorkingHours(
+                weekdays = "9:00-12:30 / 15:00-19:00 Monday morning closed",
+                weekend = "Saturday: 9:00-12:30 / 15:00-18:00"
+            ),
+            contactInfo = ContactInfo(
+                phoneNumber = "(808) 555-0111",
+                email = "giupponimoto@gmail.com"
+            )
         ),
         LocationModel(
             id = 2,
@@ -36,7 +47,16 @@ class ListFragment : Fragment() {
             address = "Imphal, Manipur, India",  
             fromDate = "20.08.2025",
             latitude = 24.8170,  // Manipur
-            longitude = 93.9368
+            longitude = 93.9368,
+            availableMotorbikes = 2,
+            workingHours = WorkingHours(
+                weekdays = "9:00-18:00",
+                weekend = "Saturday: 9:00-17:00"
+            ),
+            contactInfo = ContactInfo(
+                phoneNumber = "(555) 123-4567",
+                email = "northeast@morbidelli.com"
+            )
         ),
         LocationModel(
             id = 4,
@@ -44,7 +64,16 @@ class ListFragment : Fragment() {
             address = "Yangon, Myanmar",
             fromDate = "22.08.2025",
             latitude = 16.8661,  // Yangon, Myanmar
-            longitude = 96.1951
+            longitude = 96.1951,
+            availableMotorbikes = 1,
+            workingHours = WorkingHours(
+                weekdays = "8:00-17:00",
+                weekend = "Saturday: 8:00-16:00"
+            ),
+            contactInfo = ContactInfo(
+                phoneNumber = "+95 1 234 567",
+                email = "myanmar@morbidelli.com"
+            )
         )
     )
 
@@ -76,7 +105,7 @@ class ListFragment : Fragment() {
                 onLocationSelected?.invoke(location)
             },
             onViewMoreClick = { location ->
-                // Handle view more click
+                // Handle view more click - now handled internally
             },
             onExternalLinkClick = { location ->
                 // Handle external link click

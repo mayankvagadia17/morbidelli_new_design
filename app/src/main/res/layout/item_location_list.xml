@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/location_item_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@drawable/unselected_location_border"
     android:paddingStart="24dp"
     android:paddingEnd="24dp"
     android:paddingTop="20dp"
@@ -41,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:buttonTint="@color/radio_button_color" />
+            android:buttonTint="@color/black" />
 
     </LinearLayout>
 
@@ -135,6 +136,104 @@
             android:layout_height="16dp"
             android:src="@drawable/ic_arrow_drop_down"
             android:alpha="0.6" />
+
+    </LinearLayout>
+
+    <!-- Expanded Details Section -->
+    <LinearLayout
+        android:id="@+id/expanded_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="16dp">
+
+        <!-- Working Hours Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekdays Monday to Friday"
+                android:textColor="@color/working_hours_label"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_weekdays_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9:00-12:30 / 15:00-19:00 Monday morning closed"
+                android:textColor="@color/working_hours_text"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekend Saturday/Sunday"
+                android:textColor="@color/working_hours_label"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_weekend_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saturday: 9:00-12:30 / 15:00-18:00"
+                android:textColor="@color/working_hours_text"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Contact Information Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone number"
+                android:textColor="@color/contact_label"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(808) 555-0111"
+                android:textColor="@color/contact_text"
+                android:textSize="14sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mail"
+                android:textColor="@color/contact_label"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="giupponimoto@gmail.com"
+                android:textColor="@color/contact_text"
+                android:textSize="14sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

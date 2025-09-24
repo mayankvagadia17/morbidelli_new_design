@@ -31,6 +31,33 @@ class BookTestRideActivity : AppCompatActivity() {
     private var selectedLocation: LocationModel? = null
     
     private val searchLocationRequestCode = 1001
+    
+    private val sampleLocations = listOf(
+        LocationModel(
+            id = 1,
+            dealershipName = "Adventure Moto and services Official Dealership",
+            address = "1234 Elm Avenue, Brooklyn, NY 11201, US",
+            fromDate = "18.08.2025",
+            latitude = 27.0844,  // Arunachal Pradesh
+            longitude = 93.6053
+        ),
+        LocationModel(
+            id = 2,
+            dealershipName = "Morbidelli Northeast Service Center",
+            address = "Imphal, Manipur, India",  
+            fromDate = "20.08.2025",
+            latitude = 24.8170,  // Manipur
+            longitude = 93.9368
+        ),
+        LocationModel(
+            id = 4,
+            dealershipName = "Morbidelli Myanmar Dealership",
+            address = "Yangon, Myanmar",
+            fromDate = "22.08.2025",
+            latitude = 16.8661,  // Yangon, Myanmar
+            longitude = 96.1951
+        )
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +89,7 @@ class BookTestRideActivity : AppCompatActivity() {
         mapFragment.setOnLocationSelectedListener { location ->
             selectLocation(location)
             listFragment.updateLocationSelection(location)
+            mapFragment.updateLocationSelection(location)
         }
         
         mapFragment.setOnSearchClickedListener {
@@ -76,6 +104,7 @@ class BookTestRideActivity : AppCompatActivity() {
         listFragment.setOnLocationSelectedListener { location ->
             selectLocation(location)
             mapFragment.moveMapToLocation(location)
+            mapFragment.updateLocationSelection(location)
         }
         
         listFragment.setOnSearchClickedListener {
@@ -147,8 +176,9 @@ class BookTestRideActivity : AppCompatActivity() {
     }
     
     private fun showSearchActivity() {
-        // TODO: Implement search activity
-        Toast.makeText(this, "Search functionality", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, SearchLocationActivity::class.java)
+        intent.putExtra(SearchLocationActivity.EXTRA_LOCATIONS, ArrayList(sampleLocations))
+        startActivityForResult(intent, searchLocationRequestCode)
     }
     
     private fun proceedToNextStep() {
@@ -160,11 +190,12 @@ class BookTestRideActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         
         if (requestCode == searchLocationRequestCode && resultCode == Activity.RESULT_OK) {
-            data?.getSerializableExtra("selected_location")?.let { location ->
+            data?.getSerializableExtra(SearchLocationActivity.RESULT_SELECTED_LOCATION)?.let { location ->
                 val selectedLocation = location as LocationModel
                 selectLocation(selectedLocation)
                 mapFragment.moveMapToLocation(selectedLocation)
                 listFragment.updateLocationSelection(selectedLocation)
+                mapFragment.updateLocationSelection(selectedLocation)
             }
         }
     }

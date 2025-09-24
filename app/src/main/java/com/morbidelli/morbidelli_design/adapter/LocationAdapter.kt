@@ -15,6 +15,8 @@ class LocationAdapter(
     private val onViewMoreClick: (LocationModel) -> Unit
 ) : RecyclerView.Adapter<LocationAdapter.LocationViewHolder>() {
 
+    private var selectedLocationId: Int = -1
+
     inner class LocationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvDealershipName: TextView = itemView.findViewById(R.id.tv_dealership_name)
         private val tvAddress: TextView = itemView.findViewById(R.id.tv_address)
@@ -27,19 +29,21 @@ class LocationAdapter(
             tvAddress.text = location.address
             tvFromDate.text = location.fromDate
 
+            // Update selection state
+            val isSelected = selectedLocationId == location.id
+            if (isSelected) {
+                itemView.setBackgroundResource(R.drawable.selected_location_border)
+            } else {
+                itemView.setBackgroundResource(R.drawable.unselected_location_border)
+            }
+
             itemView.setOnClickListener {
+                setSelectedLocation(location.id)
                 onLocationClick(location)
             }
 
             tvViewMore.setOnClickListener {
                 onViewMoreClick(location)
-            }
-
-            // Update selection state if needed
-            if (location.isSelected) {
-                itemView.setBackgroundResource(R.drawable.vehicle_selected_border)
-            } else {
-                itemView.setBackgroundResource(R.drawable.vehicle_unselected_border)
             }
         }
     }
@@ -59,6 +63,11 @@ class LocationAdapter(
     fun updateLocations(newLocations: List<LocationModel>) {
         locations.clear()
         locations.addAll(newLocations)
+        notifyDataSetChanged()
+    }
+
+    fun setSelectedLocation(locationId: Int) {
+        selectedLocationId = locationId
         notifyDataSetChanged()
     }
 }

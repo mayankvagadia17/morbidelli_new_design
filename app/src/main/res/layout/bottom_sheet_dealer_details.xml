@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="24dp">
+
+    <!-- Header with close button and title -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_close"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dealer details"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- Invisible placeholder for centering -->
+        <View
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+    </LinearLayout>
+
+    <!-- Dealership Information -->
+    <TextView
+        android:id="@+id/tv_dealership_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adventure Moto and services Official dealership"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Address with external link -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Via Fabio Severo 34, Trieste, Trieste 34127"
+            android:textColor="@color/address_text"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_external_link"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_external_link"
+            android:layout_marginStart="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <!-- Available motorbike info -->
+    <TextView
+        android:id="@+id/tv_available_motorbikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available motorbike: 1"
+        android:textColor="@color/available_text"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- From date -->
+    <TextView
+        android:id="@+id/tv_from_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From: 18.08.2025"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Working Hours Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weekdays Monday to Friday"
+            android:textColor="@color/working_hours_label"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_weekdays_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9:00-12:30 / 15:00-19:00 Monday morning closed"
+            android:textColor="@color/working_hours_text"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weekend Saturday/Sunday"
+            android:textColor="@color/working_hours_label"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_weekend_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saturday: 9:00-12:30 / 15:00-18:00"
+            android:textColor="@color/working_hours_text"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Contact Information Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone number"
+            android:textColor="@color/contact_label"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(808) 555-0111"
+            android:textColor="@color/contact_text"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mail"
+            android:textColor="@color/contact_label"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="giupponimoto@gmail.com"
+            android:textColor="@color/contact_text"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Select Location Button -->
+    <Button
+        android:id="@+id/btn_select_location"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="SELECT THIS LOCATION"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_primary_background"
+        android:stateListAnimator="@null"
+        android:elevation="0dp" />
+
+</LinearLayout>
