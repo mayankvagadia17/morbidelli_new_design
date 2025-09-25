@@ -1,5 +1,6 @@
 package com.morbidelli.morbidelli_design
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -62,11 +63,19 @@ class MyBookingActivity : AppCompatActivity() {
     private fun setupRecycler() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = BookingAdapter(emptyList(), onRescheduleClick = { booking ->
-            // TODO: Hook your reschedule action
-        }, onCancelClick = { booking ->
-            // TODO: Hook your cancel action
-        })
+        adapter = BookingAdapter(emptyList(), 
+            onRescheduleClick = { booking ->
+                // TODO: Hook your reschedule action
+            }, 
+            onCancelClick = { booking ->
+                // TODO: Hook your cancel action
+            },
+            onItemClick = { booking ->
+                val intent = Intent(this, BookingDetailActivity::class.java)
+                intent.putExtra("booking", booking)
+                startActivity(intent)
+            }
+        )
         recyclerView.adapter = adapter
 
         // Close open menus when scrolling
@@ -102,53 +111,65 @@ class MyBookingActivity : AppCompatActivity() {
         allBookings.add(
             Booking(
                 id = "TR-48292",
-                date = "Oct 04, 2023",
-                time = "10:00 - 10:30 AM",
-                vehicleModel = "C1002V",
-                vehicleCode = "TR-48292",
+                date = "Wednesday, August 13, 2025",
+                time = "7:00 am - 7:30 am",
+                vehicleModel = "Trail",
+                vehicleCode = "C1002V",
                 companyName = "Oakley Motorcycles",
-                address = getString(R.string.via_fabio_severo),
+                address = "Via Fabio Severo 34, Trieste, Trieste 34127",
                 status = BookingStatus.UPCOMING,
                 hasRescheduleOption = true,
-                hasCancelOption = true
+                hasCancelOption = true,
+                contactPerson = "Matias Johnson",
+                contactEmail = "matiasjohnson@examplemail.com",
+                transmission = "6-speed manual",
+                color = "Black",
+                timezone = "GMT+8",
+                recommendation = "Be sure to bring the required documents and arrive on time."
             )
         )
         
         // Completed bookings
-        repeat(3) { index ->
-            allBookings.add(
-                Booking(
-                    id = "TR-4829${3+index}",
-                    date = "Oct 04, 2023",
-                    time = "10:00 - 10:30 AM",
-                    vehicleModel = "C1002V",
-                    vehicleCode = "TR-4829${3+index}",
-                    companyName = "Oakley Motorcycles",
-                    address = getString(R.string.via_fabio_severo),
-                    status = BookingStatus.COMPLETED,
-                    hasRescheduleOption = false,
-                    hasCancelOption = false
-                )
+        allBookings.add(
+            Booking(
+                id = "TR-48293",
+                date = "Monday, July 15, 2025",
+                time = "2:00 pm - 2:30 pm",
+                vehicleModel = "Trail",
+                vehicleCode = "C1002V",
+                companyName = "Oakley Motorcycles",
+                address = "Via Fabio Severo 34, Trieste, Trieste 34127",
+                status = BookingStatus.COMPLETED,
+                hasRescheduleOption = false,
+                hasCancelOption = false,
+                contactPerson = "Matias Johnson",
+                contactEmail = "matiasjohnson@examplemail.com",
+                transmission = "6-speed manual",
+                color = "Black",
+                timezone = "GMT+8"
             )
-        }
+        )
         
         // Cancelled bookings
-        repeat(2) { index ->
-            allBookings.add(
-                Booking(
-                    id = "TR-4829${6+index}",
-                    date = "Oct 04, 2023",
-                    time = "10:00 - 10:30 AM",
-                    vehicleModel = "C1002V",
-                    vehicleCode = "TR-4829${6+index}",
-                    companyName = "Oakley Motorcycles",
-                    address = getString(R.string.via_fabio_severo),
-                    status = BookingStatus.CANCELLED,
-                    hasRescheduleOption = false,
-                    hasCancelOption = false
-                )
+        allBookings.add(
+            Booking(
+                id = "TR-48294",
+                date = "Friday, June 20, 2025",
+                time = "11:00 am - 11:30 am",
+                vehicleModel = "Trail",
+                vehicleCode = "C1002V",
+                companyName = "Oakley Motorcycles",
+                address = "Via Fabio Severo 34, Trieste, Trieste 34127",
+                status = BookingStatus.CANCELLED,
+                hasRescheduleOption = false,
+                hasCancelOption = false,
+                contactPerson = "Matias Johnson",
+                contactEmail = "matiasjohnson@examplemail.com",
+                transmission = "6-speed manual",
+                color = "Black",
+                timezone = "GMT+8"
             )
-        }
+        )
     }
 
     private fun applyFilter(status: BookingStatus) {

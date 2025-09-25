@@ -70,7 +70,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnBookTestRide.setOnClickListener {
-            startActivity(Intent(this, BookTestRideActivity::class.java))
+            toggleEmptyState()
+//            startActivity(Intent(this, BookTestRideActivity::class.java))
         }
     }
 

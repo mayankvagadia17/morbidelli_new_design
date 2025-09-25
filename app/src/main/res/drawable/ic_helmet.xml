@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    <!-- Helmet -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M16,4C9.37,4 4,9.37 4,16v4c0,1.1 0.9,2 2,2h20c1.1,0 2,-0.9 2,-2v-4C28,9.37 22.63,4 16,4zM16,6c5.52,0 10,4.48 10,10v2H6v-2C6,10.48 10.48,6 16,6z"/>
+    <!-- Helmet visor -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M8,18h16v2H8z"/>
+</vector>

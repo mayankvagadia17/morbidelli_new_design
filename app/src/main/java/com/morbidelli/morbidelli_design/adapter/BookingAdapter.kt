@@ -15,7 +15,8 @@ import com.morbidelli.morbidelli_design.model.BookingStatus
 class BookingAdapter(
     private var bookings: List<Booking>,
     private val onRescheduleClick: (Booking) -> Unit,
-    private val onCancelClick: (Booking) -> Unit
+    private val onCancelClick: (Booking) -> Unit,
+    private val onItemClick: (Booking) -> Unit
 ) : RecyclerView.Adapter<BookingAdapter.BookingViewHolder>() {
 
     private var currentlyOpenMenuPosition = -1
@@ -104,6 +105,8 @@ class BookingAdapter(
             itemView.setOnClickListener {
                 if (currentlyOpenMenuPosition == position) {
                     closeAllMenus()
+                } else {
+                    onItemClick(booking)
                 }
             }
         }

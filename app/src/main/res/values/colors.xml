@@ -90,4 +90,17 @@
     <color name="working_hours_text">#666666</color>
     <color name="contact_label">#333333</color>
     <color name="contact_text">#666666</color>
+    
+    <!-- Booking Detail Screen Colors -->
+    <color name="blue_primary">#2196F3</color>
+    <color name="status_upcoming_bg">#FFE0B2</color>
+    <color name="status_completed_bg">#C8E6C9</color>
+    <color name="status_cancelled_bg">#FFCDD2</color>
+    <color name="recommendation_bg">#FFF8E1</color>
+    <color name="button_cancel">#F44336</color>
+    <color name="button_reschedule">#2196F3</color>
+    
+    <!-- Review Screen Colors -->
+    <color name="light_gray">#F5F5F5</color>
+    <color name="gray">#999999</color>
 </resources>

@@ -62,6 +62,21 @@
             android:label="Search Location"
             android:theme="@style/Theme.Morbidelli_Design"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".BookingDetailActivity"
+            android:exported="false"
+            android:label="Booking Details"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".ReviewActivity"
+            android:exported="false"
+            android:label="Leave Review"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:label="Message with Dealer"
+            android:theme="@style/Theme.Morbidelli_Design" />
     </application>
 
 </manifest>
