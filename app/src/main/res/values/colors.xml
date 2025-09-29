@@ -103,4 +103,7 @@
     <!-- Review Screen Colors -->
     <color name="light_gray">#F5F5F5</color>
     <color name="gray">#999999</color>
+    
+    <!-- Warning Colors -->
+    <color name="orange_warning">#FF9800</color>
 </resources>

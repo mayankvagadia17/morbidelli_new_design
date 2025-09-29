@@ -52,6 +52,16 @@
             android:label="Model Details"
             android:theme="@style/Theme.Morbidelli_Design" />
         <activity
+            android:name=".ContactDetailsActivity"
+            android:exported="false"
+            android:label="Contact Details"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".BookingConfirmationActivity"
+            android:exported="false"
+            android:label="Booking Confirmation"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
             android:name=".BookTestRideActivity"
             android:exported="false"
             android:label="Book Test Ride"
