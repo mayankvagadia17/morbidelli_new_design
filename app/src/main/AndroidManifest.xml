@@ -62,6 +62,11 @@
             android:label="Booking Confirmation"
             android:theme="@style/Theme.Morbidelli_Design" />
         <activity
+            android:name=".DateTimeSelectionActivity"
+            android:exported="false"
+            android:label="Date & Time Selection"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
             android:name=".BookTestRideActivity"
             android:exported="false"
             android:label="Book Test Ride"
