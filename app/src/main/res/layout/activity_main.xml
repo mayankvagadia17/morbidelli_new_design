@@ -259,6 +259,11 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btn_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="profile"/>
         </LinearLayout>
 
         <ScrollView
@@ -343,17 +348,39 @@
         </ScrollView>
 
 
-        <Button
-            android:id="@+id/btn_book_test_ride"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/button_cyan_rounded"
-            android:elevation="4dp"
-            android:text="@string/book_new_test_ride"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_book_test_ride"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_cyan_rounded"
+                android:elevation="4dp"
+                android:text="@string/book_new_test_ride"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_cyan_rounded"
+                android:elevation="4dp"
+                android:text="toggle"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </LinearLayout>
 

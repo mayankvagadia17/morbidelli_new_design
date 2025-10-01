@@ -18,7 +18,7 @@ class MessageAdapter(
 ) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_message, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_message, parent, false)
         return MessageViewHolder(view)
     }
 

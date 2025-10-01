@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cardCompleted: CardView
     private lateinit var cardCancelled: CardView
     private lateinit var btnBookTestRide: Button
+    private lateinit var btnToggle: Button
+    private lateinit var btn_profile: Button
     private lateinit var tvUpcomingCount: TextView
     private lateinit var tvCompletedCount: TextView
     private lateinit var tvCancelledCount: TextView
@@ -47,6 +49,8 @@ class MainActivity : AppCompatActivity() {
         cardCompleted = findViewById(R.id.card_completed)
         cardCancelled = findViewById(R.id.card_cancelled)
         btnBookTestRide = findViewById(R.id.btn_book_test_ride)
+        btnToggle = findViewById(R.id.btn_toggle)
+        btn_profile = findViewById(R.id.btn_profile)
         tvUpcomingCount = findViewById(R.id.tv_upcoming_count)
         tvCompletedCount = findViewById(R.id.tv_completed_count)
         tvCancelledCount = findViewById(R.id.tv_cancelled_count)
@@ -71,6 +75,14 @@ class MainActivity : AppCompatActivity() {
 
         btnBookTestRide.setOnClickListener {
             startActivity(Intent(this, ContactDetailsActivity::class.java))
+        }
+
+        btn_profile.setOnClickListener {
+           startActivity(Intent(this, ProfileActivity::class.java))
+        }
+
+        btnToggle.setOnClickListener {
+            toggleEmptyState()
         }
     }
 

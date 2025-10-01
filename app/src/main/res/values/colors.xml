@@ -106,4 +106,8 @@
     
     <!-- Warning Colors -->
     <color name="orange_warning">#FF9800</color>
+    
+    <!-- Notification Screen Colors -->
+    <color name="blue">#007AFF</color>
+    <color name="text_light">#AAAAAA</color>
 </resources>

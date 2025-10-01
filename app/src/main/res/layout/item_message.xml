@@ -2,184 +2,148 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@color/light_gray"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true">
 
-    <!-- Date Separator -->
-    <TextView
-        android:id="@+id/tv_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Today"
-        android:textColor="@color/gray"
-        android:textSize="12sp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        android:visibility="gone" />
+    <!-- Vehicle Thumbnail -->
+    <ImageView
+        android:id="@+id/iv_vehicle_thumbnail"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_scooter_placeholder"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vehicle_thumbnail_background" />
 
-    <!-- Message Container -->
+    <!-- Content Area -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="bottom">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <!-- Sender Message (Left) -->
+        <!-- Date and Time Row -->
         <LinearLayout
-            android:id="@+id/ll_sender_message"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="start"
-            android:visibility="gone">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
 
-            <!-- Message Bubble -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_message_sender"
-                android:padding="12dp"
-                android:maxWidth="280dp">
+                android:text="Oct 04, 2023"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
-                <!-- Quoted Message (if any) -->
-                <LinearLayout
-                    android:id="@+id/ll_quoted_message"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bg_quoted_message"
-                    android:padding="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:visibility="gone">
+            <View
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:background="@color/divider"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
 
-                    <!-- Quote Indicator -->
-                    <View
-                        android:layout_width="3dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/blue_primary"
-                        android:layout_marginEnd="8dp" />
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:00 - 10:30 AM"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
-                    <!-- Quote Content -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/tv_quoted_sender"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="You"
-                            android:textColor="@color/blue_primary"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
+        <!-- Vehicle Info -->
+        <TextView
+            android:id="@+id/tv_vehicle_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C1002V - Naked - #TR-48291"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
 
-                        <TextView
-                            android:id="@+id/tv_quoted_message"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="My message goes here..."
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            android:layout_marginTop="2dp" />
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="8dp" />
 
-                    </LinearLayout>
+        <!-- Dealer Info and Action -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-                </LinearLayout>
+            <!-- Dealer Logo and Name -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-                <!-- Message Text -->
+                <ImageView
+                    android:id="@+id/iv_dealer_logo"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_oakley_logo"
+                    android:layout_marginEnd="8dp" />
+
                 <TextView
-                    android:id="@+id/tv_message_text"
+                    android:id="@+id/tv_dealer_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Remarkable service offered."
+                    android:text="Oakley Motorcycles"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
             </LinearLayout>
 
-            <!-- Time and Status -->
+            <!-- Action Button -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="4dp">
+                android:gravity="center_vertical"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Unread Indicator -->
+                <View
+                    android:id="@+id/indicator_dot"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/message_dot_background"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone" />
 
                 <TextView
-                    android:id="@+id/tv_message_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="11:40 AM"
-                    android:textColor="@color/gray"
-                    android:textSize="12sp" />
-
-                <ImageView
-                    android:id="@+id/iv_message_status"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_check_blue"
-                    android:layout_marginStart="4dp"
-                    android:contentDescription="Message Status" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- Receiver Message (Right) -->
-        <LinearLayout
-            android:id="@+id/ll_receiver_message"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="end"
-            android:visibility="gone">
-
-            <!-- Message Bubble -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_message_receiver"
-                android:padding="12dp"
-                android:maxWidth="280dp">
-
-                <!-- Message Text -->
-                <TextView
-                    android:id="@+id/tv_receiver_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="My message goes here... Example text goes like this test text here"
-                    android:textColor="@color/white"
+                    android:text="Go to chat"
+                    android:textColor="@color/black"
                     android:textSize="14sp" />
 
-            </LinearLayout>
-
-            <!-- Time and Status -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="4dp">
-
-                <TextView
-                    android:id="@+id/tv_receiver_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10:15 AM"
-                    android:textColor="@color/gray"
-                    android:textSize="12sp" />
-
                 <ImageView
-                    android:id="@+id/iv_receiver_status"
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/ic_check_blue"
+                    android:src="@drawable/ic_chevron_right"
                     android:layout_marginStart="4dp"
-                    android:contentDescription="Message Status" />
+                    android:tint="@color/black" />
 
             </LinearLayout>
 

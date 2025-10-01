@@ -64,7 +64,22 @@
         <activity
             android:name=".DateTimeSelectionActivity"
             android:exported="false"
-            android:label="Date & Time Selection"
+            android:label="Date Time Selection"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="My Profile"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".ProfileSettingsActivity"
+            android:exported="false"
+            android:label="Profile Settings"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false"
+            android:label="Change Password"
             android:theme="@style/Theme.Morbidelli_Design" />
         <activity
             android:name=".BookTestRideActivity"
@@ -91,6 +106,21 @@
             android:name=".ChatActivity"
             android:exported="false"
             android:label="Message with Dealer"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false"
+            android:label="Notifications"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".MessagesActivity"
+            android:exported="false"
+            android:label="Messages"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".TermsOfServiceActivity"
+            android:exported="false"
+            android:label="Terms of Service"
             android:theme="@style/Theme.Morbidelli_Design" />
     </application>
 
