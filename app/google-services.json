@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "634569661233",
+    "project_id": "morbidelli-6cf45",
+    "storage_bucket": "morbidelli-6cf45.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634569661233:android:8ec7e18783e020e090ae10",
+        "android_client_info": {
+          "package_name": "com.morbidelli.morbidelli_design"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634569661233-uo4cdo1vjij6e7edt7msj0tt78mic2m9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.morbidelli.morbidelli_design",
+            "certificate_hash": "04efed5bb45e115c44ba67d91fa52dfbdda07d1b"
+          }
+        },
+        {
+          "client_id": "634569661233-074sp3a88t2c4749c63pja7qkuvbhl4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJlzqW5MBMkGd3o1OYw8rVDEgHyXkrcLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634569661233-074sp3a88t2c4749c63pja7qkuvbhl4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

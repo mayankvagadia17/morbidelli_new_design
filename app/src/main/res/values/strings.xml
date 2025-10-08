@@ -35,4 +35,7 @@
     <string name="n300_weight">161</string>
     <string name="n250r_power">25.75/9250</string>
     <string name="n250r_weight">151</string>
+    
+    <!-- Google Sign-In -->
+    <string name="default_web_client_id">634569661233-074sp3a88t2c4749c63pja7qkuvbhl4e.apps.googleusercontent.com</string>
 </resources>

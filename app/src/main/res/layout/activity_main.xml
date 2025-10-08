@@ -263,7 +263,14 @@
                 android:id="@+id/btn_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="profile"/>
+                android:layout_marginBottom="8dp"
+                android:text="Profile"/>
+                
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/btn_google_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
         </LinearLayout>
 
         <ScrollView
