@@ -110,4 +110,7 @@
     <!-- Notification Screen Colors -->
     <color name="blue">#007AFF</color>
     <color name="text_light">#AAAAAA</color>
+    
+    <!-- Social Login Colors -->
+    <color name="facebook_blue">#1877F2</color>
 </resources>

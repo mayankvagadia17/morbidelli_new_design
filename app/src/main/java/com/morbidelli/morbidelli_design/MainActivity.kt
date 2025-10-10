@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnToggle: Button
     private lateinit var btn_profile: Button
     private lateinit var btnGoogleSignIn: SignInButton
+    private lateinit var btnFacebookLogin: Button
     private lateinit var tvUpcomingCount: TextView
     private lateinit var tvCompletedCount: TextView
     private lateinit var tvCancelledCount: TextView
@@ -72,6 +73,7 @@ class MainActivity : AppCompatActivity() {
         btnToggle = findViewById(R.id.btn_toggle)
         btn_profile = findViewById(R.id.btn_profile)
         btnGoogleSignIn = findViewById(R.id.btn_google_sign_in)
+        btnFacebookLogin = findViewById(R.id.btn_facebook_login)
         tvUpcomingCount = findViewById(R.id.tv_upcoming_count)
         tvCompletedCount = findViewById(R.id.tv_completed_count)
         tvCancelledCount = findViewById(R.id.tv_cancelled_count)
@@ -115,6 +117,10 @@ class MainActivity : AppCompatActivity() {
 
         btnGoogleSignIn.setOnClickListener {
             signInWithGoogle()
+        }
+
+        btnFacebookLogin.setOnClickListener {
+            startActivity(Intent(this, FacebookLoginActivity::class.java))
         }
 
         btnToggle.setOnClickListener {
