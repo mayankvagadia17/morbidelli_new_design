@@ -33,7 +33,7 @@ class ChangePasswordActivity : AppCompatActivity() {
         btnChangePassword = findViewById(R.id.btn_change_password)
     }
     
-    private fun setupClickListeners() {
+    private fun setupClickListeners() { 
         btnBack.setOnClickListener {
             finish()
         }

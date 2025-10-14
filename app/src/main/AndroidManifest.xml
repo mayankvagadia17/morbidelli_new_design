@@ -139,6 +139,16 @@
             android:exported="false"
             android:label="Facebook Login"
             android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".MotorcycleModelsActivity"
+            android:exported="false"
+            android:label="Motorcycle Models"
+            android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".ModelDetailsActivity"
+            android:exported="false"
+            android:label="Model Details"
+            android:theme="@style/Theme.Morbidelli_Design" />
             
         <!-- Facebook Login Activity -->
         <activity

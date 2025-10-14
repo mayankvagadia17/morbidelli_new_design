@@ -113,4 +113,9 @@
     
     <!-- Social Login Colors -->
     <color name="facebook_blue">#1877F2</color>
+    
+    <!-- Additional Colors -->
+    <color name="red">#FF0000</color>
+    <color name="transparent">#00000000</color>
+    <color name="dark_card_background">#2C2C2C</color>
 </resources>

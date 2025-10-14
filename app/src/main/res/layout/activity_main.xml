@@ -280,6 +280,15 @@
                 android:text="Facebook Login"
                 android:backgroundTint="@color/facebook_blue"
                 android:textColor="@color/white" />
+                
+            <Button
+                android:id="@+id/btn_motorcycle_models"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="View Motorcycle Models"
+                android:backgroundTint="@color/primary_cyan"
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <ScrollView
