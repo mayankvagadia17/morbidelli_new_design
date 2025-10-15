@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnGoogleSignIn: SignInButton
     private lateinit var btnFacebookLogin: Button
     private lateinit var btnMotorcycleModels: Button
+    private lateinit var btnNews: Button
     private lateinit var tvUpcomingCount: TextView
     private lateinit var tvCompletedCount: TextView
     private lateinit var tvCancelledCount: TextView
@@ -76,6 +77,7 @@ class MainActivity : AppCompatActivity() {
         btnGoogleSignIn = findViewById(R.id.btn_google_sign_in)
         btnFacebookLogin = findViewById(R.id.btn_facebook_login)
         btnMotorcycleModels = findViewById(R.id.btn_motorcycle_models)
+        btnNews = findViewById(R.id.btn_news)
         tvUpcomingCount = findViewById(R.id.tv_upcoming_count)
         tvCompletedCount = findViewById(R.id.tv_completed_count)
         tvCancelledCount = findViewById(R.id.tv_cancelled_count)
@@ -127,6 +129,10 @@ class MainActivity : AppCompatActivity() {
 
         btnMotorcycleModels.setOnClickListener {
             startActivity(Intent(this, MotorcycleModelsActivity::class.java))
+        }
+
+        btnNews.setOnClickListener {
+            startActivity(Intent(this, NewsActivity::class.java))
         }
 
         btnToggle.setOnClickListener {
