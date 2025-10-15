@@ -1,5 +1,6 @@
 package com.morbidelli.morbidelli_design.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.morbidelli.morbidelli_design.NewsDetailsActivity
 import com.morbidelli.morbidelli_design.R
 import com.morbidelli.morbidelli_design.adapter.NewsAdapter
 import com.morbidelli.morbidelli_design.model.NewsModel
@@ -132,10 +134,10 @@ class NewsFragment : Fragment() {
     }
 
     private fun onNewsItemClick(news: NewsModel) {
-        // Handle news item click - navigate to news detail
-        // You can implement navigation to a news detail activity/fragment
-        // For now, just show a toast
-        // Toast.makeText(context, "Clicked: ${news.title}", Toast.LENGTH_SHORT).show()
+        // Navigate to news details screen
+        val intent = Intent(requireContext(), NewsDetailsActivity::class.java)
+        intent.putExtra("news", news)
+        startActivity(intent)
     }
 
     private fun onFilterClick() {

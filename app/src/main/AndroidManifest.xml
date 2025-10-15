@@ -154,6 +154,11 @@
             android:exported="false"
             android:label="News &amp; Events"
             android:theme="@style/Theme.Morbidelli_Design" />
+        <activity
+            android:name=".NewsDetailsActivity"
+            android:exported="false"
+            android:label="News Details"
+            android:theme="@style/Theme.Morbidelli_Design" />
             
         <!-- Facebook Login Activity -->
         <activity
