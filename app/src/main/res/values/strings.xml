@@ -43,4 +43,36 @@
     <string name="facebook_app_id">YOUR_FACEBOOK_APP_ID</string>
     <string name="facebook_client_token">YOUR_FACEBOOK_CLIENT_TOKEN</string>
     <string name="fb_login_protocol_scheme">fbYOUR_FACEBOOK_APP_ID</string>
+    
+    <!-- Test Ride Feedback Strings -->
+    <string name="write_review">Write a review</string>
+    <string name="test_ride_feedback">Test Ride Feedback</string>
+    <string name="share_experience_description">Share your experience to help others choose the right Morbidelli.</string>
+    <string name="please_rate_test_ride">Please rate your test ride</string>
+    <string name="first_name">FIRST NAME</string>
+    <string name="last_name">LAST NAME</string>
+    <string name="type_first_name">Type your first name</string>
+    <string name="type_last_name">Type your last name</string>
+    <string name="image">Image</string>
+    <string name="upload_image">Upload image</string>
+    <string name="browse_image">Browse image</string>
+    <string name="image_formats">(only .PNG .JPG or .JPEG)</string>
+    <string name="max_size">max size: 5 MB</string>
+    <string name="feedback">FEEDBACK</string>
+    <string name="feedback_hint">Tell us about your experience (What did you enjoy or wish was better?)</string>
+    <string name="continue_button">CONTINUE</string>
+    <string name="back_button">BACK</string>
+    <string name="submit_button">SUBMIT</string>
+    
+    <!-- Rating Categories -->
+    <string name="price_quality_ratio">Price/quality ratio</string>
+    <string name="price_quality_question">How satisfied were you with the motorbike\'s value for the price you paid?</string>
+    <string name="dealer_communication">Dealer Communication</string>
+    <string name="dealer_communication_question">How clearly and professionally did the dealer explain everything?</string>
+    <string name="motorbike_condition">Motorbike Condition</string>
+    <string name="motorbike_condition_question">How would you rate the motorbike\'s overall condition during the test ride?</string>
+    <string name="punctuality">Punctuality</string>
+    <string name="punctuality_question">Was everything on time and well-organized during your visit?</string>
+    <string name="test_ride_satisfaction">Test Ride Satisfaction</string>
+    <string name="test_ride_satisfaction_question">How satisfied were you with the overall test ride experience?</string>
 </resources>

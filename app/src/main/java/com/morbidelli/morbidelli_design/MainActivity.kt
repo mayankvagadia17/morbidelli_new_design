@@ -134,6 +134,11 @@ class MainActivity : AppCompatActivity() {
         btnNews.setOnClickListener {
             startActivity(Intent(this, NewsActivity::class.java))
         }
+        
+        // Add test ride feedback button
+        findViewById<Button>(R.id.btn_test_feedback)?.setOnClickListener {
+            startActivity(Intent(this, TestRideFeedbackActivity::class.java))
+        }
 
         btnToggle.setOnClickListener {
             toggleEmptyState()

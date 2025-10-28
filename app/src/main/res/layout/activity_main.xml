@@ -416,6 +416,21 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- Test Ride Feedback Button -->
+        <Button
+            android:id="@+id/btn_test_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_cyan_rounded"
+            android:elevation="4dp"
+            android:text="Test Ride Feedback"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
 </LinearLayout>
